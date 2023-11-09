@@ -53,11 +53,13 @@ public class Main {
                 }
             }
         }
+        scanner.close();
         System.out.println();
         printDeco(32,'*');
         System.out.println("***     YOUR SCORE: "+score+"     ***");
         System.out.println("***   POSSIBLE SCORE: "+totalRounds*pointsPerRound*maxAttempt+"   ***");
         printDeco(32,'*');
+
     }
     static  int getUserInputNum(Scanner scanner, String text){
         System.out.print(text+ ":  ");

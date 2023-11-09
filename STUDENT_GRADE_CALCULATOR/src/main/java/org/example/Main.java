@@ -24,6 +24,7 @@ public class Main {
         double total =0.0;
         double average=0.0;
         double percentage=0.0;
+        int maxScore=100;
 
 
         for(int i =0; i<totalSubjects; i++){
@@ -35,7 +36,15 @@ public class Main {
         for (Subject subject:subjectList) {
             double score = getUserInputDouble(scanner,subject.getSubjectName());
             subject.setScore(score);
+            subject.setGrade(computeGrade(score));
+            total+=score;
         }
+
+        //PRINT STUDENT PERFORMANCE
+        double averagePercentage = ((double) total / (totalSubjects * maxScore)) * 100;
+        System.out.println("The average percentage of the scores is: " + averagePercentage + "%");
+
+        average = total/totalSubjects;
 
     }
     static  int getUserInputNum(Scanner scanner, String text){
@@ -57,5 +66,24 @@ public class Main {
         String formattedString = String.format("%" + len + "c", character).replace(' ', character);
         System.out.println(formattedString);
 
+    }
+
+     static String computeGrade(double score){
+        if (score>=70){
+            return "A";
+        }
+        if(score>=60){
+            return "B";
+        }
+        if(score>=50){
+            return "C";
+        }
+        if (score>=45){
+            return "D";
+        }
+        return  "E";
+    }
+    static void printStudentGrade(Subject subject){
+        System.out.println();
     }
 }

@@ -31,7 +31,7 @@ public class Main {
             int targetNumber = random.nextInt(100)+1;
             int attemptsLeft=maxAttempt;
             int roundsLeft=(totalRounds-i);
-            System.out.println("\nRound: "+roundsLeft);
+            System.out.println("\nRounds Left: "+roundsLeft);
             System.out.println("Generating number ...");
             System.out.println("Generated number: ###");
             System.out.println("\nLets play...");

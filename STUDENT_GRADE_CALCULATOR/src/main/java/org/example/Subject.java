@@ -9,6 +9,22 @@ public class Subject {
         return subjectName;
     }
 
+    public double getScore() {
+        return score;
+    }
+
+    public void setScore(double score) {
+        this.score = score;
+    }
+
+    public String getGrade() {
+        return grade;
+    }
+
+    public void setGrade(String grade) {
+        this.grade = grade;
+    }
+
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
     }

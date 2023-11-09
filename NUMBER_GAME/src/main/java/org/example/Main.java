@@ -17,8 +17,8 @@ public class Main {
         System.out.print("Nice to have you "+playerName);
         System.out.println();
         printDeco(32,'-');
-        int rounds=getUserInputNum(scanner,"How many round do you want to play");
-        //int maxAttempt=getUserInputNum(scanner,"Max attempt per round");
+        int totalRounds=getUserInputNum(scanner,"How many round do you want to play");
+        int rounds = totalRounds;
         int maxAttempt=7;
         System.out.println("Number range 1-100");
 
@@ -32,15 +32,15 @@ public class Main {
             System.out.println(targetNumber);
             int attemptsLeft=maxAttempt;
             System.out.println("Generating number ...");
-            System.out.println("Generate number: ###");
+            System.out.println("Generated number: ###");
             System.out.println();
             System.out.println("Lets play...");
             while (attemptsLeft>0){
+                System.out.println();
                 System.out.println("Attempt left:  "+ attemptsLeft);
                 int userGuess = getUserInputNum(scanner,"Guess ");
                 if(userGuess == targetNumber){
                     score=score+(attemptsLeft*pointsPerRound);
-                    rounds--;
                     System.out.println("Great job!");
                     attemptsLeft=0;
                     continue;
@@ -51,28 +51,18 @@ public class Main {
                     System.out.println("Too low, try again");
                     attemptsLeft--;
                 }
-//                attemptsLeft=maxAttempt;
-//                rounds--;
-//                System.out.println();
             }
         }
         System.out.println();
         printDeco(32,'*');
-        System.out.println("***         SCORE: "+score+"        ***");
+        System.out.println("***     YOUR SCORE: "+score+"     ***");
+        System.out.println("***   POSSIBLE SCORE: "+totalRounds*pointsPerRound+"   ***");
         printDeco(32,'*');
-
     }
-
     static  int getUserInputNum(Scanner scanner, String text){
         System.out.print(text+ ":  ");
         return scanner.nextInt();
     }
-
-    static String getUserInputText(Scanner scanner, String text){
-        System.out.print(text+ ":  ");
-        return scanner.nextLine();
-    }
-
     static void printDeco(int len, char character){
         String formattedString = String.format("%" + len + "c", character).replace(' ', character);
         System.out.println(formattedString);

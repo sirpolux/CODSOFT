@@ -17,7 +17,7 @@ public class Main {
         System.out.print("Nice to have you "+playerName);
         System.out.println();
         printDeco(32,'-');
-        int totalRounds=getUserInputNum(scanner,"How many round do you want to play");
+        int totalRounds=getUserInputNum(scanner,"How many rounds do you want to play");
         int rounds = totalRounds;
         int maxAttempt=7;
         System.out.println("Number range 1-100");
@@ -29,12 +29,12 @@ public class Main {
 
         for (int i=0; i<rounds; i++ ){
             int targetNumber = random.nextInt(100)+1;
-            System.out.println(targetNumber);
             int attemptsLeft=maxAttempt;
+            int roundsLeft=(totalRounds-i);
+            System.out.println("\nRound: "+roundsLeft);
             System.out.println("Generating number ...");
             System.out.println("Generated number: ###");
-            System.out.println();
-            System.out.println("Lets play...");
+            System.out.println("\nLets play...");
             while (attemptsLeft>0){
                 System.out.println();
                 System.out.println("Attempt left:  "+ attemptsLeft);
@@ -56,7 +56,7 @@ public class Main {
         System.out.println();
         printDeco(32,'*');
         System.out.println("***     YOUR SCORE: "+score+"     ***");
-        System.out.println("***   POSSIBLE SCORE: "+totalRounds*pointsPerRound+"   ***");
+        System.out.println("***   POSSIBLE SCORE: "+totalRounds*pointsPerRound*maxAttempt+"   ***");
         printDeco(32,'*');
     }
     static  int getUserInputNum(Scanner scanner, String text){
